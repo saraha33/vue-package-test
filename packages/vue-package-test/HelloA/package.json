@@ -1,0 +1,26 @@
+{
+  "name": "vue-package-test.hello-a",
+  "description": "A component that says \"HelloA\" with orange text.",
+  "version": "0.0.1-beta.0",
+  "author": {
+    "name": "Chris Fritz",
+    "email": "sara33y@gmail.com",
+    "github": "saraha33"
+  },
+  "license": "MIT",
+  "homepage": "https://www.npmjs.com/package/vue-package-test.hello-a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saraha33/vue-package-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saraha33/vue-package-test/issues"
+  },
+  "module": "index.js",
+  "main": "cjs/index.js",
+  "unpkg": "umd/index.min.js",
+  "jsdelivr": "umd/index.min.js",
+  "peerDependencies": {
+    "vue": ">=2.0.0"
+  }
+}
