@@ -1,7 +1,7 @@
 {
   "name": "vue-package-test",
   "description": "An example component library built with Vue CLI 3.",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.2-beta.0",
   "author": {
     "name": "Chris Fritz",
     "email": "sara33y@gmail.com",
