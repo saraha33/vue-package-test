@@ -297,8 +297,8 @@ components: { ${package.moduleName} }
 If you only want to use a small subset of components, import only individually packaged components to reduce the size of your application:
 
 \`\`\`js
-import HelloA from 'hello-vue-components/HelloA'
-import HelloB from 'hello-vue-components/HelloB'
+import HelloA from 'vue-package-test/HelloA'
+import HelloB from 'vue-package-test/HelloB'
 \`\`\`
 `
 
