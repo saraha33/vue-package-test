@@ -1,7 +1,7 @@
 {
   "name": "vue-package-test-x.hello-b",
   "description": "A component that says \"HelloB\" with green text.",
-  "version": "0.0.2-beta.3",
+  "version": "0.0.2-beta.4",
   "author": {
     "name": "Chris Fritz",
     "email": "sara33y@gmail.com",
