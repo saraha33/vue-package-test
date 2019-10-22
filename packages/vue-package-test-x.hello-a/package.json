@@ -1,7 +1,7 @@
 {
   "name": "vue-package-test-x.hello-a",
   "description": "A component that says \"HelloA\" with orange text.",
-  "version": "0.0.2-beta.5",
+  "version": "0.0.2-beta.6",
   "author": {
     "name": "Chris Fritz",
     "email": "sara33y@gmail.com",
