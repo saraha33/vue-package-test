@@ -1,5 +1,5 @@
 
-# vue-package-test
+# vue-package-test-x
 
 > An example component library built with Vue CLI 3.
 
@@ -15,7 +15,7 @@ Drop the library in with a `<script>` tag alongside Vue:
 </div>
 
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-package-test"></script>
+<script src="https://unpkg.com/vue-package-test-x"></script>
 <script>
 new Vue({ el: '#app' })
 </script>
@@ -29,7 +29,7 @@ Or, if you only want to use a small subset of components, drop them in individua
 </div>
 
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-package-test/HelloA"></script>
+<script src="https://unpkg.com/vue-package-test-x/HelloA"></script>
 <script>
 new Vue({ el: '#app' })
 </script>
@@ -40,13 +40,13 @@ new Vue({ el: '#app' })
 Install the library with NPM:
 
 ```bash
-npm install vue-package-test
+npm install vue-package-test-x
 ```
 
 Then either import the library and either globally register all components with:
 
 ```js
-import VuePackageTest from 'vue-package-test'
+import VuePackageTest from 'vue-package-test-x'
 
 Vue.use(VuePackageTest)
 ```
@@ -54,7 +54,7 @@ Vue.use(VuePackageTest)
 or import and locally register a single component with:
 
 ```js
-import { HelloA } from 'vue-package-test'
+import { HelloA } from 'vue-package-test-x'
 
 export default {
 components: { VuePackageTest }
@@ -66,6 +66,6 @@ components: { VuePackageTest }
 If you only want to use a small subset of components, import only individually packaged components to reduce the size of your application:
 
 ```js
-import HelloA from 'vue-package-test/HelloA'
-import HelloB from 'vue-package-test/HelloB'
+import HelloA from 'vue-package-test-x/HelloA'
+import HelloB from 'vue-package-test-x/HelloB'
 ```

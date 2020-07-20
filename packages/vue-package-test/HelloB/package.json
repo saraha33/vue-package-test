@@ -1,5 +1,5 @@
 {
-  "name": "vue-package-test.hello-b",
+  "name": "vue-package-test-x.hello-b",
   "description": "A component that says \"HelloB\" with green text.",
   "version": "0.0.1-beta.0",
   "author": {
@@ -8,13 +8,13 @@
     "github": "saraha33"
   },
   "license": "MIT",
-  "homepage": "https://www.npmjs.com/package/vue-package-test.hello-b",
+  "homepage": "https://www.npmjs.com/package/vue-package-test-x.hello-b",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saraha33/vue-package-test.git"
+    "url": "git+https://github.com/saraha33/vue-package-test-x.git"
   },
   "bugs": {
-    "url": "https://github.com/saraha33/vue-package-test/issues"
+    "url": "https://github.com/saraha33/vue-package-test-x/issues"
   },
   "module": "index.js",
   "main": "cjs/index.js",

@@ -3,10 +3,10 @@ import App from './App'
 
 if (process.env.VUE_APP_E2E) {
   if (window.__e2e_lib) {
-    Vue.use(require('vue-package-test').default)
+    Vue.use(require('vue-package-test-x').default)
   } else if (window.__e2e_components) {
-    Vue.component('HelloA', require('vue-package-test.hello-a').default)
-    Vue.component('HelloB', require('vue-package-test.hello-b').default)
+    Vue.component('HelloA', require('vue-package-test-x.hello-a').default)
+    Vue.component('HelloB', require('vue-package-test-x.hello-b').default)
   }
 } else {
   // Install the plugin directly from src in development

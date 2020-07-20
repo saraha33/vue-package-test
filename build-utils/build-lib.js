@@ -3,6 +3,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const { execSync } = require('child_process')
 const libConfig = require('../lib')
+const lernaConfig = require('../lerna')
 const _ = require('lodash')
 const parseComponent = require('@vue/component-compiler-utils').parse
 
@@ -23,7 +24,8 @@ fs.emptyDirSync(getPath('../packages'))
 // Build the main lib, with all components packaged into a plugin
 console.info('🏗 Building main library')
 execSync(
-  `${vueCliServicePath} build src/index.js --target lib --name index --dest dist/`
+  `${vueCliServicePath} build src/index.js --target lib --name index --dest dist/`,
+  {stdio: 'inherit'}
 )
 // Rename the CommonJS build so that it can be imported with
 // ${libConfig}/dist
@@ -34,7 +36,8 @@ for (const componentName of componentNames) {
   // Build the component individually
   console.info(`🏗 Building ${componentName}`)
   execSync(
-    `${vueCliServicePath} build src/${componentName}.vue --target lib --name index --dest dist/${componentName}/`
+    `${vueCliServicePath} build src/${componentName}.vue --target lib --name index --dest dist/${componentName}/`,
+    {stdio: 'inherit'}
   )
 
   // Rename the CommonJS build so that it can be imported with
@@ -114,12 +117,22 @@ function renameIndex(componentName) {
       return !/\.unit\.js$/.test(filePath)
     }
   })
+
+  // for main library export everything
+  let exportStatement = 'export * from \'./src\';';
+
+  // if this is for component use export default
+  if (componentName) {
+    exportStatement = `\
+import ${componentName} from './src/${componentName}.vue';
+
+export default ${componentName};
+`;
+  }
+
   fs.writeFileSync(
     path.resolve(destPackageFolder, 'index.js'),
-    `\
-export * from './src${componentName ? '/' + componentName + '.vue' : ''}'
-`
-  )
+    exportStatement)
 
   let description = libConfig.description
   let example
@@ -191,12 +204,22 @@ THE SOFTWARE.
         return !/(LICENSE|README\.md|src)$/.test(filePath)
       }
     })
+
+    // for main library export everything
+    let exportStatement2 = 'export * from \'../src\';';
+
+    // if this is for component use export default
+    if (componentName) {
+      exportStatement2 = `\
+import ${componentName} from '../src/${componentName}.vue';
+
+export default ${componentName};
+`;
+    }
+
     fs.writeFileSync(
       path.resolve(componentPackageFolder, 'index.js'),
-      `\
-export * from '${path.join('../src', componentName || '')}'
-`
-    )
+      exportStatement2);
   }
 }
 
@@ -206,7 +229,7 @@ function generatePackageJson(package) {
     {
       name: package.name,
       description: package.description,
-      version: package.version,
+      version: lernaConfig.version,
       author: libConfig.author,
       license: 'MIT',
       homepage: `https://www.npmjs.com/package/${package.name}`,
@@ -298,8 +321,8 @@ components: { ${package.moduleName} }
 If you only want to use a small subset of components, import only individually packaged components to reduce the size of your application:
 
 \`\`\`js
-import HelloA from 'vue-package-test/HelloA'
-import HelloB from 'vue-package-test/HelloB'
+import HelloA from 'vue-package-test-x/HelloA'
+import HelloB from 'vue-package-test-x/HelloB'
 \`\`\`
 `
 

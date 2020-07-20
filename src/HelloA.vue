@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.hello">
-    HelloA
-  </div>
+HelloAaa
+</div>
 </template>
 
 <style module>

@@ -15,7 +15,7 @@ Drop the library in with a `<script>` tag alongside Vue to globally install all 
 </div>
 
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-package-test"></script>
+<script src="https://unpkg.com/vue-package-test-x"></script>
 <script>
   new Vue({ el: '#app' })
 </script>
@@ -30,8 +30,8 @@ Or, if you only want to use a small subset of components, drop them in individua
 </div>
 
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-package-test/HelloA"></script>
-<script src="https://unpkg.com/vue-package-test/HelloB"></script>
+<script src="https://unpkg.com/vue-package-test-x/HelloA"></script>
+<script src="https://unpkg.com/vue-package-test-x/HelloB"></script>
 <script>
   new Vue({ el: '#app' })
 </script>
@@ -42,13 +42,13 @@ Or, if you only want to use a small subset of components, drop them in individua
 Install the library with NPM:
 
 ```bash
-npm install vue-package-test
+npm install vue-package-test-x
 ```
 
 Then register the library as a plugin to globally install all components:
 
 ```js
-import HelloVueComponents from 'vue-package-test'
+import HelloVueComponents from 'vue-package-test-x'
 
 Vue.use(HelloVueComponents)
 ```
@@ -56,7 +56,7 @@ Vue.use(HelloVueComponents)
 Or, import components individually for local registration:
 
 ```js
-import { HelloA, HelloB } from 'vue-package-test'
+import { HelloA, HelloB } from 'vue-package-test-x'
 
 export default {
   components: { HelloA, HelloB }
@@ -68,6 +68,6 @@ export default {
 If you only want to use a small subset of components, only import individually packaged components to reduce the size of your application:
 
 ```js
-import HelloA from 'vue-package-test.HelloA'
-import HelloB from 'vue-package-test.HelloB'
+import HelloA from 'vue-package-test-x.HelloA'
+import HelloB from 'vue-package-test-x.HelloB'
 ```
