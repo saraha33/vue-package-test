@@ -73,7 +73,7 @@ import HelloB from 'vue-package-test-x.HelloB'
 ```
 
 
-[![Browserstack-logo](force-fallback.png){:height="50%" width="50%"}](https://www.browserstack.com)
+[![Browserstack-logo](sortable-fallback.png)](https://www.browserstack.com)
 
 
 
