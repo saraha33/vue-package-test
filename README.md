@@ -71,3 +71,12 @@ If you only want to use a small subset of components, only import individually p
 import HelloA from 'vue-package-test-x.HelloA'
 import HelloB from 'vue-package-test-x.HelloB'
 ```
+
+
+[![Browserstack-logo](force-fallback.png){:height="50%" width="50%"}](https://www.browserstack.com)
+
+
+
+
+
+
